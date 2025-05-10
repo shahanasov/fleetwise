@@ -151,7 +151,7 @@ class VehiclesOverviewPage extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: vehicle.statusColor.withOpacity(0.1),
+                        color: vehicle.statusColor.withValues(),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
@@ -204,7 +204,7 @@ class VehiclesOverviewPage extends StatelessWidget {
           // Divider
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: Divider(height: 1, color: Colors.grey.withOpacity(0.2)),
+            child: Divider(height: 1, color: Colors.grey.withValues()),
           ),
           
           // Financial data
@@ -226,7 +226,7 @@ class VehiclesOverviewPage extends StatelessWidget {
                   height: 8,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withValues(),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -253,7 +253,7 @@ class VehiclesOverviewPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                   child: LinearProgressIndicator(
                     value: vehicle.progressValue,
-                    backgroundColor: Colors.grey.withOpacity(0.2),
+                    backgroundColor: Colors.grey.withValues(),
                     valueColor: AlwaysStoppedAnimation<Color>(vehicle.progressColor),
                     minHeight: 8,
                   ),
@@ -275,7 +275,7 @@ class VehiclesOverviewPage extends StatelessWidget {
               margin: EdgeInsets.only(top: 16),
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.1),
+                color: Colors.red.withValues(),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(12),
                   bottomRight: Radius.circular(12),

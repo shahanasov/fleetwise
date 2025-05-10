@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
