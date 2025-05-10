@@ -1,5 +1,7 @@
 import 'package:fleetwise/presentation/bloc/navigation/bloc/bottom_navigation_bloc.dart';
 import 'package:fleetwise/presentation/screens/dashboard/home/home_screen.dart';
+import 'package:fleetwise/presentation/screens/dashboard/home/home_sliver.dart';
+import 'package:fleetwise/presentation/widgets/vehicle_assign.dart';
 import 'package:fleetwise/presentation/screens/dashboard/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class MainPage extends StatelessWidget {
   MainPage({super.key});
   final List<Widget> screens = [
-    HomeScreen(),
+    HomePage(),
     VehiclesScreen(),
     DriversScreen(),
     AccountScreen(),

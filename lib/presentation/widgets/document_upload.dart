@@ -15,26 +15,19 @@ Widget documentUpload() {
           color: Colors.white,
           borderRadius: BorderRadius.circular(6),
         ),
-        child: Row(
-          children: [
-            const Expanded(child: SizedBox()),
-            button()
-          ],
-        ),
+        child: Row(children: [const Expanded(child: SizedBox()), button()]),
       ),
     ],
   );
 }
 
-Widget button(){
+Widget button() {
   return OutlinedButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                foregroundColor: const Color(0xFF0A2540),
-              ),
-              child: const Text(
-                'Upload',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-              ),
-            );
+    onPressed: () {},
+    style: TextButton.styleFrom(foregroundColor: const Color(0xFF0A2540)),
+    child: const Text(
+      'Upload',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+    ),
+  );
 }

@@ -1,6 +1,6 @@
+import 'package:fleetwise/services/authrepository.dart';
 import 'package:fleetwise/presentation/screens/auth/document_upload_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class NameInputPage extends StatefulWidget {
   const NameInputPage({super.key});
@@ -10,11 +10,11 @@ class NameInputPage extends StatefulWidget {
 }
 
 class _NameInputPageState extends State<NameInputPage> {
-  final TextEditingController _nameController = TextEditingController();
-  
+  final TextEditingController nameController = TextEditingController();
+
   @override
   void dispose() {
-    _nameController.dispose();
+    nameController.dispose();
     super.dispose();
   }
 
@@ -27,7 +27,7 @@ class _NameInputPageState extends State<NameInputPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height:50),
+              SizedBox(height: 50),
               // Main Content
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,17 +48,12 @@ class _NameInputPageState extends State<NameInputPage> {
                       // Subtitle
                       RichText(
                         text: const TextSpan(
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
+                          style: TextStyle(fontSize: 14, color: Colors.grey),
                           children: [
                             TextSpan(text: 'Enter full name as on your '),
                             TextSpan(
                               text: 'Aadhar Card',
-                              style: TextStyle(
-                                color: Color(0xFF1E3A5C),
-                              ),
+                              style: TextStyle(color: Color(0xFF1E3A5C)),
                             ),
                           ],
                         ),
@@ -73,26 +68,23 @@ class _NameInputPageState extends State<NameInputPage> {
                       color: const Color(0xFFB6E388),
                       borderRadius: BorderRadius.circular(24),
                     ),
-                    child: Image.asset('asset/images/avatar.png')
+                    child: Image.asset('asset/images/avatar.png'),
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               // Name Label
               const Text(
                 'Your Full Name*',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF1E3A5C),
-                ),
+                style: TextStyle(fontSize: 14, color: Color(0xFF1E3A5C)),
               ),
               const SizedBox(height: 8),
-              
+
               // Name Input Field
               TextField(
-                controller: _nameController,
+                controller: nameController,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -111,9 +103,9 @@ class _NameInputPageState extends State<NameInputPage> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              
+
               const Spacer(),
-              
+
               // Submit Button
               Padding(
                 padding: const EdgeInsets.only(bottom: 24.0),
@@ -122,12 +114,33 @@ class _NameInputPageState extends State<NameInputPage> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => DocumentUploadPage(),
-                        ),
-                      );
-                      // Handle submit action
+                      final name = nameController.text.trim();
+
+                      if (name.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Please enter your name'),
+                          ),
+                        );
+                        return;
+                      }
+Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => DocumentUploadPage(),
+                              ),
+                            );
+                      // AuthRepository()
+                      //     .updateUserName(name)
+                      //     .then((_) {
+                            
+                      //     })
+                      //     .catchError((e) {
+                      //       ScaffoldMessenger.of(context).showSnackBar(
+                      //         SnackBar(
+                      //           content: Text('Failed to update name: $e'),
+                      //         ),
+                      //       );
+                      //     });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFDAE6F1),
