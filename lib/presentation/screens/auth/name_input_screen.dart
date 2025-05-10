@@ -124,23 +124,21 @@ class _NameInputPageState extends State<NameInputPage> {
                         );
                         return;
                       }
-Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => DocumentUploadPage(),
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => DocumentUploadPage(),
+                        ),
+                      );
+                      AuthRepository()
+                          .updateUserName(name)
+                          .then((_) {})
+                          .catchError((e) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Failed to update name: $e'),
                               ),
                             );
-                      // AuthRepository()
-                      //     .updateUserName(name)
-                      //     .then((_) {
-                            
-                      //     })
-                      //     .catchError((e) {
-                      //       ScaffoldMessenger.of(context).showSnackBar(
-                      //         SnackBar(
-                      //           content: Text('Failed to update name: $e'),
-                      //         ),
-                      //       );
-                      //     });
+                          });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFDAE6F1),

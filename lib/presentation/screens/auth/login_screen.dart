@@ -2,11 +2,9 @@ import 'package:fleetwise/presentation/bloc/auth/bloc/auth_bloc.dart';
 import 'package:fleetwise/presentation/screens/auth/otp_screen.dart';
 import 'package:fleetwise/presentation/screens/dashboard/navigation/bottom_navigation.dart';
 import 'package:fleetwise/presentation/theme/app_colors.dart';
-import 'package:fleetwise/presentation/widgets/appbar.dart';
 import 'package:fleetwise/presentation/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

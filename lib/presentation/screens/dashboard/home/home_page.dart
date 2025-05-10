@@ -1,4 +1,3 @@
-import 'package:fleetwise/presentation/screens/dashboard/pages/tracking_screen.dart';
 import 'package:fleetwise/presentation/theme/app_colors.dart';
 import 'package:fleetwise/presentation/widgets/add_first.dart';
 import 'package:fleetwise/presentation/widgets/appbar.dart';
@@ -36,7 +35,7 @@ class HomePage extends StatelessWidget {
         subtitle: 'See fuel, toll, and other costs clearly',
         colors: [AppColors.card3color1, AppColors.card3color2],
       ),
-      // You can add more widgets here or create different types of tracking widgets
+      //  tracking widgets
     ];
     return Scaffold(
       body: CustomScrollView(
@@ -67,7 +66,7 @@ class HomePage extends StatelessWidget {
                       'asset/images/Display.png',
                       width: double.infinity,
                       fit:
-                          BoxFit.cover, // ✅ Helps in fitting the image properly
+                          BoxFit.cover, 
                       color:
                           const Color.fromARGB(
                             255,
@@ -137,8 +136,8 @@ class HomePage extends StatelessWidget {
                         mainAxisSpacing: 10,
                       ),
                       physics:
-                          NeverScrollableScrollPhysics(), // disables grid's own scroll
-                      shrinkWrap: true, // makes it take only needed height
+                          NeverScrollableScrollPhysics(), 
+                      shrinkWrap: true, 
                       children: trackingWidgets,
                     ),
                   ],
